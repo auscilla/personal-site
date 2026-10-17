@@ -21,7 +21,7 @@
       html { font-size: 14px; }
     }
     
-    /* Hover transitions for SVG art & Images */
+    /* Hover transitions for SVG art */
     .art-icon {
       transition: transform 0.3s ease, color 0.3s ease;
     }
@@ -34,7 +34,7 @@
 <body class="px-5 md:px-12 lg:px-24 py-10 md:py-16 max-w-4xl mx-auto border-x border-zinc-200 min-h-screen bg-[#fcfcf9]">
 
   <!-- Top Navigation & Metadata -->
-  <header class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-zinc-300 pb-5 mb-16 text-[10px] md:text-xs tracking-[0.15em] text-zinc-500 font-medium uppercase gap-3 sm:gap-0">
+  <header class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-zinc-300 pb-5 mb-10 md:mb-16 text-[10px] md:text-xs tracking-[0.15em] text-zinc-500 font-medium uppercase gap-3 sm:gap-0">
     <div class="font-semibold text-zinc-800">Aaron Uscilla</div>
     <div class="text-zinc-500">
       St. Petersburg, FL &nbsp;•&nbsp; Clemson Univ. Alum
@@ -42,21 +42,21 @@
   </header>
 
   <!-- Hero / Intro -->
-  <section class="flex flex-col sm:flex-row gap-6 md:gap-8 items-start sm:items-center mb-24">
+  <section class="flex flex-col sm:flex-row gap-6 md:gap-8 items-start sm:items-center mb-16 md:mb-24">
     
     <!-- Profile Image -->
-    <div class="w-20 h-20 md:w-24 md:h-24 rounded-full border-2 border-zinc-300 flex items-center justify-center shrink-0 overflow-hidden bg-zinc-100">
+    <div class="w-28 h-28 md:w-32 md:h-32 rounded-full border-2 border-zinc-300 flex items-center justify-center shrink-0 overflow-hidden bg-zinc-100">
       <img src="headshot.jpeg" alt="Aaron Uscilla" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x400/e4e4e7/52525b?text=AU';" />
     </div>
     
     <div class="max-w-xl">
-      <h1 class="text-2xl md:text-3xl font-medium tracking-tight text-zinc-900">Aaron Uscilla</h1>
-      <p class="text-sm md:text-base text-zinc-600 mt-2 leading-relaxed">
+      <h1 class="text-3xl md:text-4xl font-medium tracking-tight text-zinc-900">Aaron Uscilla</h1>
+      <p class="text-base md:text-lg text-zinc-600 mt-2 leading-relaxed">
         Personal Website
       </p>
       
       <!-- Action Quick-Links -->
-      <div class="flex gap-5 mt-5 text-xs md:text-sm font-medium text-zinc-500">
+      <div class="flex gap-5 mt-5 text-sm md:text-base font-medium text-zinc-500">
         <a href="mailto:aaron@uscilla.com" class="hover:text-zinc-900 hover:underline underline-offset-4 transition-all">Email ↗</a>
         <a href="https://www.linkedin.com/in/aaron-uscilla/" target="_blank" class="hover:text-zinc-900 hover:underline underline-offset-4 transition-all">LinkedIn ↗</a>
         <a href="https://calendly.com" target="_blank" class="hover:text-zinc-900 hover:underline underline-offset-4 transition-all">Schedule ↗</a>
@@ -99,8 +99,8 @@
             Link Building App • <a href="https://backlinkbrain.com/download-now/" target="_blank" class="underline underline-offset-2 hover:text-zinc-800 transition-colors">App Store ↗</a>
           </p>
         </div>
-        <!-- Replaced SVG with Image tag for brain.png -->
-        <img src="brain.png" alt="Backlink Brain Logo" class="art-icon w-14 h-14 md:w-16 md:h-16 shrink-0 object-contain" onerror="this.onerror=null; this.src='https://placehold.co/100x100/e4e4e7/52525b?text=Brain';" />
+        <!-- Custom Brain Image -->
+        <img src="brain.png" alt="Backlink Brain" class="art-icon w-14 h-14 md:w-16 md:h-16 shrink-0 object-contain" onerror="this.onerror=null; this.src='https://placehold.co/100x100/e4e4e7/52525b?text=Brain';" />
       </div>
 
     </div>
@@ -160,7 +160,7 @@
     <h2 class="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-400 font-semibold mb-10 border-b border-zinc-200 pb-3">03 / CREATIVE</h2>
 
     <div class="space-y-12 md:space-y-16">
-      
+
       <!-- Silly Sayings -->
       <div class="flex justify-between items-center group">
         <div class="pr-6">
@@ -184,7 +184,7 @@
           <path d="M34,10 L34,30 L29,26 L24,30 L24,10" />
         </svg>
       </div>
-
+      
       <!-- Sap Tapper Animated Short -->
       <div class="flex justify-between items-center group">
         <div class="pr-6">
@@ -215,7 +215,7 @@
 
   <!-- Footer -->
   <footer class="border-t border-zinc-300 pt-8 mt-12 text-xs text-zinc-500 tracking-wider flex flex-col sm:flex-row justify-between items-center">
-    <div class="uppercase mb-4 sm:mb-0">&copy; Aaron Uscilla &nbsp;&bull;&nbsp; <span id="current-year"></span></div>
+    <div class="uppercase mb-4 sm:mb-0">© Aaron Uscilla &nbsp;•&nbsp; <span id="current-year"></span></div>
     <div class="flex gap-6 font-medium">
       <a href="mailto:aaron@uscilla.com" class="hover:text-zinc-900 transition-colors">Contact</a>
       <a href="https://www.linkedin.com/in/aaron-uscilla/" target="_blank" class="hover:text-zinc-900 transition-colors">LinkedIn</a>
@@ -225,5 +225,6 @@
   <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
