@@ -12,169 +12,231 @@
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
       background-color: #fcfcf9;
-      color: #1e1e21;
+      color: #18181b; /* zinc-900 */
+      -webkit-font-smoothing: antialiased;
     }
-    .spacer { height: 120px; }
-    .item-spacing { margin-bottom: 80px; }
+    /* Smooth scaling for responsive design */
+    html { font-size: 16px; }
+    @media (max-width: 640px) {
+      html { font-size: 14px; }
+    }
+    
+    /* Hover transitions for SVG art */
+    .art-icon {
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+    .group:hover .art-icon {
+      transform: scale(1.05);
+      color: #000000;
+    }
   </style>
 </head>
-<body class="px-6 md:px-16 lg:px-24 py-12 max-w-4xl mx-auto border-x border-zinc-100 bg-[#fdfdfb]">
+<body class="px-5 md:px-12 lg:px-24 py-10 md:py-16 max-w-4xl mx-auto border-x border-zinc-200 min-h-screen bg-[#fcfcf9]">
 
   <!-- Top Navigation & Metadata -->
-  <header class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-zinc-200/60 pb-5 mb-16 text-[10px] tracking-widest text-zinc-400 font-medium">
-    <div class="uppercase font-semibold text-zinc-600">Aaron Uscilla</div>
-    <div class="mt-2 sm:mt-0 uppercase">
+  <header class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-zinc-300 pb-5 mb-16 text-[10px] md:text-xs tracking-[0.15em] text-zinc-500 font-medium uppercase gap-3 sm:gap-0">
+    <div class="font-semibold text-zinc-800">Aaron Uscilla</div>
+    <div class="text-zinc-500">
       St. Petersburg, FL &nbsp;•&nbsp; Clemson Univ. Alum
     </div>
   </header>
 
   <!-- Hero / Intro -->
-  <section class="flex flex-col sm:flex-row gap-8 items-start mb-16">
-    <!-- Minimalist Avatar Frame -->
-    <div class="w-16 h-16 rounded-full border border-zinc-200/80 flex items-center justify-center shrink-0 overflow-hidden bg-zinc-50">
-      <svg class="w-10 h-10 text-zinc-400" fill="none" stroke="currentColor" stroke-width="0.85" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-      </svg>
+  <section class="flex flex-col sm:flex-row gap-6 md:gap-8 items-start sm:items-center mb-24">
+    
+    <!-- Profile Image -->
+    <div class="w-20 h-20 md:w-24 md:h-24 rounded-full border-2 border-zinc-300 flex items-center justify-center shrink-0 overflow-hidden bg-zinc-100">
+      <img src="avatar_perfect.png" alt="Aaron Uscilla" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x400/e4e4e7/52525b?text=AU';" />
     </div>
+    
     <div class="max-w-xl">
-      <h1 class="text-xl font-medium tracking-tight text-zinc-800">Aaron Uscilla</h1>
-      <p class="text-xs text-zinc-500 mt-2 leading-relaxed">
+      <h1 class="text-2xl md:text-3xl font-medium tracking-tight text-zinc-900">Aaron Uscilla</h1>
+      <p class="text-sm md:text-base text-zinc-600 mt-2 leading-relaxed">
         Building digital ventures &amp; creative projects.
       </p>
+      
       <!-- Action Quick-Links -->
-      <div class="flex gap-4 mt-5 text-[11px] font-medium text-zinc-400">
-        <a href="mailto:aaron@aaronuscilla.com" class="hover:text-zinc-900 transition-colors">Email ↗</a>
-        <a href="https://www.linkedin.com/in/aaron-uscilla/" target="_blank" class="hover:text-zinc-900 transition-colors">LinkedIn ↗</a>
-        <a href="https://calendly.com" target="_blank" class="hover:text-zinc-900 transition-colors">Schedule ↗</a>
+      <div class="flex gap-5 mt-5 text-xs md:text-sm font-medium text-zinc-500">
+        <a href="mailto:aaron@uscilla.com" class="hover:text-zinc-900 hover:underline underline-offset-4 transition-all">Email ↗</a>
+        <a href="https://www.linkedin.com/in/aaron-uscilla/" target="_blank" class="hover:text-zinc-900 hover:underline underline-offset-4 transition-all">LinkedIn ↗</a>
+        <a href="https://calendly.com" target="_blank" class="hover:text-zinc-900 hover:underline underline-offset-4 transition-all">Schedule ↗</a>
       </div>
     </div>
   </section>
 
-  <div class="spacer"></div>
 
   <!-- 01 / VENTURES -->
-  <section class="item-spacing">
-    <h2 class="text-[9px] uppercase tracking-[0.2em] text-zinc-400 font-semibold mb-8">01 / VENTURES</h2>
+  <section class="mb-24">
+    <h2 class="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-400 font-semibold mb-10 border-b border-zinc-200 pb-3">01 / VENTURES</h2>
     
-    <div class="space-y-12">
+    <div class="space-y-12 md:space-y-16">
+      
       <!-- Mad Mango Marketing -->
-      <div class="flex justify-between items-start group">
-        <div>
-          <h3 class="text-[13px] font-medium tracking-wide text-zinc-800">MAD MANGO MARKETING</h3>
-          <p class="text-[11px] text-zinc-400 mt-1">SEO &amp; Organic Growth • <a href="https://madmangomarketing.com" target="_blank" class="underline hover:text-zinc-600 transition-colors">Website ↗</a></p>
+      <div class="flex justify-between items-center group">
+        <div class="pr-6">
+          <h3 class="text-base md:text-lg font-medium tracking-wide text-zinc-900">MAD MANGO MARKETING</h3>
+          <p class="text-xs md:text-sm text-zinc-500 mt-1 md:mt-2">
+            SEO &amp; Organic Growth • <a href="https://madmangomarketing.com" target="_blank" class="underline underline-offset-2 hover:text-zinc-800 transition-colors">Website ↗</a>
+          </p>
         </div>
-        <!-- Mango Line Art -->
-        <svg class="w-8 h-8 text-zinc-300 opacity-80 group-hover:text-zinc-400 transition-all shrink-0 ml-4" fill="none" stroke="currentColor" stroke-width="0.8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M12 3c1.6 0 3 .8 3.8 2.1.8.1 1.6.4 2.2.8.5.4.9.9 1.1 1.5.3.7.4 1.5.4 2.3 0 4.1-3.4 7.3-7.5 7.3s-7.5-3.2-7.5-7.3c0-.8.1-1.6.4-2.3.2-.6.6-1.1 1.1-1.5.6-.4 1.4-.7 2.2-.8C8.3 3.8 9.7 3 12 3Z" />
-          <path stroke-linecap="round" stroke-linejoin="round" d="M12 3c.5 1 1 2 .5 3.5M10.5 5.5s-1-1.5-2.5-1" />
+        <!-- Detailed Mango Line Art -->
+        <svg class="art-icon w-14 h-14 md:w-16 md:h-16 text-zinc-800 shrink-0" fill="none" stroke="currentColor" stroke-width="0.75" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15,38 C6,30 5,16 12,10 C18,4 32,5 39,12 C46,19 45,33 38,39 C31,45 23,45 15,38 Z" stroke-linejoin="round"/>
+          <path d="M22,9 C21,5 24,2 29,2 C35,2 41,6 43,11 C42,15 39,18 34,18 C28,18 22,14 22,9 Z" stroke-linejoin="round"/>
+          <path d="M22,9 C28,9 36,12 43,11" />
+          <path d="M30,5 L32,8 M35,7 L36,10 M27,8 L29,11" /> 
+          <path d="M12,18 C9,24 10,32 15,38" stroke-dasharray="2 3"/>
+          <path d="M16,14 C13,22 14,30 20,38" stroke-dasharray="1 4"/>
+          <path d="M38,16 C42,22 41,30 36,36" stroke-dasharray="2 4"/>
         </svg>
       </div>
 
       <!-- Backlink Brain -->
-      <div class="flex justify-between items-start group">
-        <div>
-          <h3 class="text-[13px] font-medium tracking-wide text-zinc-800">BACKLINK BRAIN</h3>
-          <p class="text-[11px] text-zinc-400 mt-1">Link Building App • <a href="https://backlinkbrain.com" target="_blank" class="underline hover:text-zinc-600 transition-colors">App Store ↗</a></p>
+      <div class="flex justify-between items-center group">
+        <div class="pr-6">
+          <h3 class="text-base md:text-lg font-medium tracking-wide text-zinc-900">BACKLINK BRAIN</h3>
+          <p class="text-xs md:text-sm text-zinc-500 mt-1 md:mt-2">
+            Link Building App • <a href="https://backlinkbrain.com" target="_blank" class="underline underline-offset-2 hover:text-zinc-800 transition-colors">App Store ↗</a>
+          </p>
         </div>
-        <!-- Brain Line Art -->
-        <svg class="w-8 h-8 text-zinc-300 opacity-80 group-hover:text-zinc-400 transition-all shrink-0 ml-4" fill="none" stroke="currentColor" stroke-width="0.8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9.5 9.5c.3-1.5 1.5-2.5 3-2.5s2.7 1 3 2.5m-6 0C8 9.8 7 11 7 12.5S8 15 9.5 15.3M16.5 9.5c1.5.3 2.5 1.5 2.5 3s-1 2.7-2.5 3m-7 2.8c-1.5-.3-2.5-1.5-2.5-3.1 0-1 .5-2 1.3-2.6M14.5 15.3c-.3 1.5-1.5 2.5-3 2.5s-2.7-1-3-2.5" />
-          <path d="M12 7v11M7 12h10" stroke="currentColor" stroke-width="0.5"/>
+        <!-- Detailed Brain Line Art -->
+        <svg class="art-icon w-14 h-14 md:w-16 md:h-16 text-zinc-800 shrink-0" fill="none" stroke="currentColor" stroke-width="0.75" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24,42 C12,42 4,34 4,22 C4,10 14,4 24,4" />
+          <path d="M24,4 C34,4 44,10 44,22 C44,34 36,42 24,42" />
+          <path d="M24,4 V42" stroke-dasharray="2 2" />
+          <path d="M4,22 C10,20 14,24 20,22" />
+          <path d="M8,12 C14,14 16,10 22,14" />
+          <path d="M10,32 C16,30 18,34 24,30" />
+          <path d="M14,6 C16,12 10,16 16,20" />
+          <path d="M18,26 C12,28 16,34 10,36" />
+          <path d="M24,14 C18,16 20,24 24,26" />
+          <path d="M44,22 C38,20 34,24 28,22" />
+          <path d="M40,12 C34,14 32,10 26,14" />
+          <path d="M38,32 C32,30 30,34 24,30" />
+          <path d="M34,6 C32,12 38,16 32,20" />
+          <path d="M30,26 C36,28 32,34 38,36" />
+          <path d="M24,14 C30,16 28,24 24,26" />
+          <path d="M16,42 C16,46 20,48 24,48 C28,48 32,46 32,42" />
+          <path d="M20,42 V46 M28,42 V46 M24,42 V48" />
         </svg>
       </div>
+
     </div>
   </section>
 
-  <div class="spacer"></div>
 
   <!-- 02 / INDIE GAMES -->
-  <section class="item-spacing">
-    <h2 class="text-[9px] uppercase tracking-[0.2em] text-zinc-400 font-semibold mb-8">02 / INDIE GAMES</h2>
+  <section class="mb-24">
+    <h2 class="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-400 font-semibold mb-10 border-b border-zinc-200 pb-3">02 / INDIE GAMES</h2>
 
-    <div class="space-y-14">
-      <!-- Sap Tapper (The Maple Syrup Game) -->
-      <div class="flex justify-between items-start group border border-zinc-100 p-6 rounded-xl bg-zinc-50/20">
-        <div>
-          <h3 class="text-[13px] font-medium tracking-wide text-zinc-800">SAP TAPPER (The Maple Syrup Game)</h3>
-          <p class="text-[11px] text-zinc-400 mt-1">Explore and collect • <a href="https://aisagames.itch.io/sap-tapper" target="_blank" class="underline hover:text-zinc-600 transition-colors">Play ↗</a></p>
+    <div class="space-y-12 md:space-y-16">
+      
+      <!-- Sap Tapper -->
+      <div class="flex justify-between items-center group">
+        <div class="pr-6">
+          <h3 class="text-base md:text-lg font-medium tracking-wide text-zinc-900">SAP TAPPER (The Maple Syrup Game)</h3>
+          <p class="text-xs md:text-sm text-zinc-500 mt-1 md:mt-2">
+            Explore and collect • <a href="https://aisagames.itch.io/sap-tapper" target="_blank" class="underline underline-offset-2 hover:text-zinc-800 transition-colors">Play ↗</a>
+          </p>
         </div>
-        
-        <!-- Maple Leaf / Bottle Line Art -->
-        <div class="flex gap-3 items-center shrink-0 ml-4 opacity-85 group-hover:opacity-100 transition-all">
-          <!-- 5-point Maple Leaf -->
-          <svg class="w-8 h-8 text-zinc-300" fill="none" stroke="currentColor" stroke-width="0.8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-3.5m0-3.5L8.5 13m3.5 1L15.5 13M12 14c-1-1.5-3.5-1.5-4.5 0-.8-.7-2-.3-2.5.5s0 2.2 1 2.5L12 18l6-1c1-.3 1.5-1.8 1-2.5s-1.7-1.2-2.5-.5c-1-1.5-3.5-1.5-4.5 0Z" />
-            <path d="M12 3l1.5 3 3-.5-1 3.5 3.5.5-3 2 1.5 3.5L12 13.5l-5.5 1.5 1.5-3.5-3-2 3.5-.5-1-3.5 3 .5L12 3z" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <!-- Syrup Bottle -->
-          <svg class="w-5 h-7 text-zinc-300" fill="none" stroke="currentColor" stroke-width="0.8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M7 6V4h4v2" />
-            <path d="M5 8h8M4 11.5c0-1.5 1.5-3.5 1.5-3.5h7s1.5 2 1.5 3.5v7.5c0 1.5-1 1.5-2.5 1.5h-5C5 20.5 4 20.5 4 19v-7.5z" />
-            <path d="M7 12c.5 1 2 1 2.5 0" />
-          </svg>
-        </div>
+        <!-- Detailed Maple Leaf Line Art -->
+        <svg class="art-icon w-14 h-14 md:w-16 md:h-16 text-zinc-800 shrink-0" fill="none" stroke="currentColor" stroke-width="0.75" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24,46 L24,24" />
+          <path d="M24,4 L29,14 L41,10 L35,22 L45,28 L35,34 L37,42 L24,36 L11,42 L13,34 L3,28 L13,22 L7,10 L19,14 Z" stroke-linejoin="round" />
+          <path d="M24,24 L41,10 M24,24 L7,10 M24,24 L45,28 M24,24 L3,28 M24,24 L37,42 M24,24 L11,42 M24,24 L24,4" />
+          <path d="M32,18 L36,18 M16,18 L12,18 M34,26 L38,24 M14,26 L10,24 M29,34 L33,36 M19,34 L15,36 M24,14 L28,11 M24,14 L20,11" />
+        </svg>
       </div>
 
       <!-- The Great American Road Trip -->
-      <div class="flex justify-between items-start group">
-        <div>
-          <h3 class="text-[13px] font-medium tracking-wide text-zinc-800">THE GREAT AMERICAN ROAD TRIP</h3>
-          <p class="text-[11px] text-zinc-400 mt-1">Upcoming Game • <a href="https://aisagames.itch.io/" target="_blank" class="underline hover:text-zinc-600 transition-colors">Art ↗</a></p>
+      <div class="flex justify-between items-center group">
+        <div class="pr-6">
+          <h3 class="text-base md:text-lg font-medium tracking-wide text-zinc-900">THE GREAT AMERICAN ROAD TRIP</h3>
+          <p class="text-xs md:text-sm text-zinc-500 mt-1 md:mt-2">
+            Upcoming Game • <a href="https://aisagames.itch.io/" target="_blank" class="underline underline-offset-2 hover:text-zinc-800 transition-colors">Art ↗</a>
+          </p>
         </div>
-        <!-- Minimal landscape -->
-        <svg class="w-12 h-8 text-zinc-300 opacity-80 group-hover:text-zinc-400 transition-all shrink-0 ml-4" fill="none" stroke="currentColor" stroke-width="0.65" viewBox="0 0 48 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M4 18c6-2 10-1 14-3s8-4 14-2" stroke-linecap="round"/>
-          <path d="M22 20s2-4 6-4M8 12c1.5-1.5 4-.5 5 1m16-4c2.5-.5 4.5 1 5 3M42 16h-4v2" stroke-linecap="round"/>
-          <path d="M4 22L44 22" />
+        <!-- Detailed Landscape Line Art -->
+        <svg class="art-icon w-16 h-12 md:w-20 md:h-16 text-zinc-800 shrink-0" fill="none" stroke="currentColor" stroke-width="0.75" viewBox="0 0 64 32" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4,28 C16,28 24,24 32,24 C40,24 48,28 60,28" />
+          <path d="M16,32 C24,28 30,24 32,24 C34,24 40,28 48,32" />
+          <path d="M31,25 L31,26 M29.5,28 L29,29 M27,31 L26,32" />
+          <path d="M8,27 L16,12 L24,25 L32,8 L42,25 L50,14 L56,27" stroke-linejoin="round"/>
+          <path d="M14,16 L16,18 L18,16 M29,14 L32,18 L35,14 M47,19 L50,22 L53,19" />
+          <circle cx="48" cy="10" r="4" />
+          <path d="M48,2 L48,4 M48,16 L48,18 M40,10 L42,10 M54,10 L56,10 M42,4 L44,6 M52,14 L54,16 M54,4 L52,6 M44,14 L42,16" />
+          <path d="M16,8 C16,6 20,6 20,8 C22,8 22,10 20,10 L16,10 C14,10 14,8 16,8 Z" />
         </svg>
       </div>
+
     </div>
   </section>
 
-  <div class="spacer"></div>
 
   <!-- 03 / CREATIVE & WRITING -->
-  <section class="item-spacing">
-    <h2 class="text-[9px] uppercase tracking-[0.2em] text-zinc-400 font-semibold mb-8">03 / CREATIVE</h2>
+  <section class="mb-24">
+    <h2 class="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-400 font-semibold mb-10 border-b border-zinc-200 pb-3">03 / CREATIVE</h2>
 
-    <div class="space-y-12">
+    <div class="space-y-12 md:space-y-16">
+      
       <!-- Sap Tapper Animated Short -->
-      <div class="flex justify-between items-start group">
-        <div>
-          <h3 class="text-[13px] font-medium tracking-wide text-zinc-800">SAP TAPPER: ANIMATED SHORT</h3>
-          <p class="text-[11px] text-zinc-400 mt-1">Claymation Cabin Story • <span class="text-zinc-400">Coming Soon</span></p>
+      <div class="flex justify-between items-center group">
+        <div class="pr-6">
+          <h3 class="text-base md:text-lg font-medium tracking-wide text-zinc-900">SAP TAPPER: ANIMATED SHORT</h3>
+          <p class="text-xs md:text-sm text-zinc-500 mt-1 md:mt-2">
+            Claymation Cabin Story • <span class="text-zinc-400">Coming Soon</span>
+          </p>
         </div>
-        <!-- Cabin Silhouette Line Art -->
-        <svg class="w-8 h-8 text-zinc-300 opacity-85 group-hover:text-zinc-400 transition-all shrink-0 ml-4" fill="none" stroke="currentColor" stroke-width="0.8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M3 12l9-7 9 7" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M5 11v9h14v-9"/>
-          <path d="M9 20v-5h6v5M12 12a1 1 0 100-2 1 1 0 000 2z" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M17 6.5V4h2v4" />
+        <!-- Detailed Movie Camera Line Art -->
+        <svg class="art-icon w-14 h-14 md:w-16 md:h-16 text-zinc-800 shrink-0" fill="none" stroke="currentColor" stroke-width="0.75" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="20" width="22" height="16" rx="2" />
+          <path d="M32,22 L40,16 V40 L32,34" stroke-linejoin="round"/>
+          <rect x="40" y="14" width="2" height="28" />
+          <circle cx="16" cy="12" r="8" />
+          <circle cx="16" cy="12" r="2" />
+          <path d="M16,4 V10 M16,14 V20 M8,12 H14 M18,12 H24 M10,6 L14,10 M18,14 L22,18 M22,6 L18,10 M14,14 L10,18" />
+          <circle cx="28" cy="12" r="8" />
+          <circle cx="28" cy="12" r="2" />
+          <path d="M28,4 V10 M28,14 V20 M20,12 H26 M30,12 H36 M22,6 L26,10 M30,14 L34,18 M34,6 L30,10 M26,14 L22,18" />
+          <path d="M14,24 H28 M14,30 H28" />
+          <path d="M18,36 L14,46 M24,36 L28,46" />
         </svg>
       </div>
 
       <!-- Silly Sayings -->
-      <div class="flex justify-between items-start group">
-        <div>
-          <h3 class="text-[13px] font-medium tracking-wide text-zinc-800">SILLY SAYINGS</h3>
-          <p class="text-[11px] text-zinc-400 mt-1">Children's Book • <a href="https://www.barnesandnoble.com" target="_blank" class="underline hover:text-zinc-600 transition-colors">Barnes &amp; Noble ↗</a></p>
+      <div class="flex justify-between items-center group">
+        <div class="pr-6">
+          <h3 class="text-base md:text-lg font-medium tracking-wide text-zinc-900">SILLY SAYINGS</h3>
+          <p class="text-xs md:text-sm text-zinc-500 mt-1 md:mt-2">
+            Children's Book • <a href="https://www.barnesandnoble.com/w/silly-sayings-the-curious-kids-who-called-them-out-aaron-uscilla/1148069820?ean=9798319666178" target="_blank" class="underline underline-offset-2 hover:text-zinc-800 transition-colors">Barnes &amp; Noble ↗</a>
+          </p>
         </div>
-        <!-- Book Line Art -->
-        <svg class="w-8 h-8 text-zinc-300 opacity-80 group-hover:text-zinc-400 transition-all shrink-0 ml-4" fill="none" stroke="currentColor" stroke-width="0.8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18c-2.305 0-4.408.867-6 2.292m0-14.25v14.25" />
+        <!-- Detailed Book Line Art -->
+        <svg class="art-icon w-14 h-14 md:w-16 md:h-16 text-zinc-800 shrink-0" fill="none" stroke="currentColor" stroke-width="0.75" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24,38 C16,38 8,40 4,42 L4,12 C8,10 16,8 24,10 C32,8 40,10 44,12 L44,42 C40,40 32,38 24,38 Z" stroke-linejoin="round"/>
+          <path d="M24,10 L24,38" />
+          <path d="M4,16 C8,14 16,12 24,14" />
+          <path d="M4,20 C8,18 16,16 24,18" />
+          <path d="M4,24 C8,22 16,20 24,22" />
+          <path d="M4,28 C8,26 16,24 24,26" />
+          <path d="M44,16 C40,14 32,12 24,14" />
+          <path d="M44,20 C40,18 32,16 24,18" />
+          <path d="M44,24 C40,22 32,20 24,22" />
+          <path d="M44,28 C40,26 32,24 24,26" />
+          <path d="M34,10 L34,30 L29,26 L24,30 L24,10" />
         </svg>
       </div>
+
     </div>
   </section>
 
-  <div class="spacer"></div>
 
   <!-- Footer -->
-  <footer class="border-t border-zinc-200/60 pt-10 text-[9px] text-zinc-400 tracking-wider flex flex-col sm:flex-row justify-between items-center">
-    <div class="uppercase">© Aaron Uscilla &nbsp;•&nbsp; 2026</div>
-    <div class="flex gap-5 mt-4 sm:mt-0 text-[10px]">
-      <a href="mailto:aaron@aaronuscilla.com" class="hover:text-zinc-800 transition-colors">Contact</a>
-      <a href="https://www.linkedin.com/in/aaron-uscilla/" class="hover:text-zinc-800 transition-colors">LinkedIn</a>
+  <footer class="border-t border-zinc-300 pt-8 mt-12 text-xs text-zinc-500 tracking-wider flex flex-col sm:flex-row justify-between items-center">
+    <div class="uppercase mb-4 sm:mb-0">© Aaron Uscilla &nbsp;•&nbsp; 2026</div>
+    <div class="flex gap-6 font-medium">
+      <a href="mailto:aaron@uscilla.com" class="hover:text-zinc-900 transition-colors">Contact</a>
+      <a href="https://www.linkedin.com/in/aaron-uscilla/" target="_blank" class="hover:text-zinc-900 transition-colors">LinkedIn</a>
     </div>
   </footer>
 
